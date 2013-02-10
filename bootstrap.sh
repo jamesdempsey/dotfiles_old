@@ -16,6 +16,9 @@ files="ackrc gitconfig gvimrc.after vimrc.before vimrc.after zshrc"
 #
 # brew install macvim
 #
+# And you should also probably install iTerm2, dunno if there's way to
+# brew install that shit..
+#
 # Then install Janus using the automatic installer:
 
 curl -Lo- https://bit.ly/janus-bootstrap | bash
