@@ -1,0 +1,4 @@
+call janus#disable_plugin('snipmate')
+
+" Map leader
+let mapleader = ","
