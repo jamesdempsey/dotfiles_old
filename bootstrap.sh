@@ -19,13 +19,22 @@ files="ackrc gitconfig gvimrc.after vimrc.before vimrc.after zshrc"
 # And you should also probably install iTerm2, dunno if there's way to
 # brew install that shit..
 #
-# Then install Janus using the automatic installer:
+# If you don't have Janus, then install it using the automatic installer:
 
-curl -Lo- https://bit.ly/janus-bootstrap | bash
+if ! test ~/.vim/janus
+then
+  curl -Lo- https://bit.ly/janus-bootstrap | bash
+else
+  cd ~/.vim
+  rake
+fi
 
-# Then automatically install oh-my-zsh:
+# If you also don't have oh-my-zsh..
 
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+if ! test ~/.oh-my-zsh/
+then
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+fi
 
 # Backup old dotfiles and create new symlinks
 
