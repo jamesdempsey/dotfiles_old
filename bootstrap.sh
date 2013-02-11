@@ -51,4 +51,7 @@ rm -f ~/.oh-my-zsh/custom/example.zsh
 ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
 
 # font shit
-cp $dir/DinaMedium.dfont ~/Library/Fonts/DinaMedium.dfont
+cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
+
+# iterm2 shit
+cp -i $dir/com.googlecode.iterm2.plist ~/Library/Preferences/
