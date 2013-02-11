@@ -21,7 +21,7 @@ files="ackrc gitconfig gvimrc.after vimrc.before vimrc.after zshrc"
 #
 # If you don't have Janus, then install it using the automatic installer:
 
-if ! test ~/.vim/janus
+if [ ! -d ~/.vim/janus ]
 then
   curl -Lo- https://bit.ly/janus-bootstrap | bash
 else
@@ -31,7 +31,7 @@ fi
 
 # If you also don't have oh-my-zsh..
 
-if ! test ~/.oh-my-zsh/
+if [ ! -d ~/.oh-my-zsh/ ]
 then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 fi
