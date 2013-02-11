@@ -53,5 +53,5 @@ ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
 # font shit
 cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
 
-# iterm2 shit
-cp -i $dir/com.googlecode.iterm2.plist ~/Library/Preferences/
+# iterm2 color preset shit
+open $dir/kolo-herald.itermcolors
