@@ -4,5 +4,5 @@ set guifont=Dina:h16
 set co=116
 set transparency=0
 
-" ack won't open first match in current buffer
-nnoremap <D-S-f> :Ack!<Space>
+" So ack won't open first match in current buffer
+nnoremap <D-F> :Ack!<Space>

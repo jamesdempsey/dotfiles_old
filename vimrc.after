@@ -28,6 +28,7 @@ nmap <Leader>h :nohls<CR>
 
 " So ack won't open first match in current buffer
 nnoremap <Leader>f :Ack!<Space>
+"nnoremap <D-S-f> :Ack!<Space>
 
 " Tab for last buffer
 nnoremap <Tab> :b#<CR>
