@@ -41,3 +41,6 @@ let g:ctrlp_custom_ignore = {
 
 " Get rid of those annoying .swp files
 set noswapfile
+
+" Janus does some weird Sass syntax highlighting by default?
+au BufRead,BufNewFile *.scss set filetype=scss
