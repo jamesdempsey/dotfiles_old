@@ -43,4 +43,8 @@ let g:ctrlp_custom_ignore = {
 set noswapfile
 
 " Janus does some weird Sass syntax highlighting by default?
+" Problem is ~/.vim/janus/vim/langs/scss/ftdetect/scss.vim runs
+" au BufRead,BufNewFile *.scss set filetype=scss.css
+" which sets css syntax highlighting for scss I think.
+" Not what we want, so this undoes it:
 au BufRead,BufNewFile *.scss set filetype=scss
