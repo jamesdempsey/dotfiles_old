@@ -67,7 +67,7 @@ slate.bind('down:ctrl,alt,cmd', function(win) {
   win.doOperation(pushDown);
 });
 
-slate.bind('m:ctrl,alt,cmd', function(win) {
+slate.bind('m:ctrl,cmd', function(win) {
   win.doOperation(fullscreen);
 });
 
