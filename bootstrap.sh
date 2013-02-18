@@ -47,6 +47,7 @@ for file in $files; do
 done
 
 # oh-my-zsh custom shit
+mv ~/.oh-my-zsh/custom/example.zsh ~/dotfiles_old/example.zsh
 rm -f ~/.oh-my-zsh/custom/example.zsh
 ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
 
