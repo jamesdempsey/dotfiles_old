@@ -8,7 +8,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="ackrc gitconfig gvimrc.after slate.js vimrc.before vimrc.after zshrc"
+files="ackrc gvimrc.after slate.js vimrc.before vimrc.after zshrc"
 
 ####################
 
