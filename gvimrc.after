@@ -5,4 +5,4 @@ set co=116
 set transparency=0
 
 " Ag, the new hotness
-nnoremap <D-F> :Ag!<Space>
+nnoremap <D-F> :Ag!<Space>-i<Space>

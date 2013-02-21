@@ -46,4 +46,4 @@ set noswapfile
 au BufRead,BufNewFile *.scss set filetype=scss
 
 " Ag, the new hotness
-nnoremap <Leader>f :Ag!<Space>
+nnoremap <Leader>f :Ag!<Space>-i<Space>
