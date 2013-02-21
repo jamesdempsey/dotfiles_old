@@ -26,10 +26,6 @@ nnoremap <backspace> 10kzz
 " Turn off highlighting for current matches
 nmap <Leader>h :nohls<CR>
 
-" So ack won't open first match in current buffer
-nnoremap <Leader>f :Ack!<Space>
-"nnoremap <D-S-f> :Ack!<Space>
-
 " Tab for last buffer
 nnoremap <Tab> :b#<CR>
 
@@ -48,3 +44,6 @@ set noswapfile
 " which sets css syntax highlighting for scss I think.
 " Not what we want, so this undoes it:
 au BufRead,BufNewFile *.scss set filetype=scss
+
+" Ag, the new hotness
+nnoremap <Leader>f :Ag!<Space>

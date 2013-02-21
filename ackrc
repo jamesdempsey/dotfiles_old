@@ -1,6 +1,0 @@
---smart-case
---type-set=haml=.haml
---type-set=slim=.slim
---type-set=hbs=.hbs
---type-set=scss=.scss
---type-set=coffee=.coffee
