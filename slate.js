@@ -71,9 +71,9 @@ slate.bind('m:ctrl,cmd', function(win) {
   win.doOperation(fullscreen);
 });
 
-slate.bind('i:ctrl,cmd', chromeFocus)
-slate.bind('j:ctrl,cmd', iTermFocus)
-slate.bind('k:ctrl,cmd', macVimFocus)
+slate.bind('i:ctrl,cmd', chromeFocus);
+slate.bind('j:ctrl,cmd', iTermFocus);
+slate.bind('k:ctrl,cmd', macVimFocus);
 
 slate.bind('j:ctrl,alt,cmd', slate.operation('layout', {
   'name' : iTermChromeLayout
