@@ -51,9 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # characters in vim, but may be required by postgresql?
 #
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export PATH=$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/heroku/bin
 
 unsetopt correct_all
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH="/usr/local/heroku/bin:$PATH"
