@@ -1,3 +1,15 @@
+// Configs
+
+slate.configAll({
+  'defaultToCurrentScreen' : true,
+  'checkDefaultsOnLoad' : true
+});
+
+// Displays
+
+var airDisplay = '1440x900';
+var extDisplay = '1680x1050';
+
 // Operations
 
 var pushLeft = slate.operation('push', {
@@ -27,6 +39,9 @@ var fullscreen = slate.operation('move', {
   'height' : 'screenSizeY'
 });
 
+var fullscreenExtDisplay = fullscreen.dup({ 'screen' : extDisplay });
+var fullscreenAirDisplay = fullscreen.dup({ 'screen' : airDisplay });
+
 var iTermChromeShow = slate.operation('show', {
   'app' : ['iTerm', 'Google Chrome']
 });
@@ -34,6 +49,18 @@ var iTermChromeShow = slate.operation('show', {
 var iTermFocus = slate.operation('focus', { 'app' : 'iTerm' });
 var macVimFocus = slate.operation('focus', { 'app' : 'MacVim' });
 var chromeFocus = slate.operation('focus', { 'app' : 'Google Chrome' });
+
+// Hashes
+
+var fullscreenAirHash = {
+    'operations': fullscreenAirDisplay,
+    'repeat' : true
+}
+
+var fullscreenExtHash =  {
+    'operations': fullscreenExtDisplay,
+    'repeat' : true
+}
 
 // Layouts
 
@@ -47,6 +74,20 @@ var iTermChromeLayout = slate.layout('iTermChromeLayout', {
     'operations' : pushLeft,
     'main-first' : true
   }
+});
+
+var dualDisplays = slate.layout('dualDisplays', {
+  'iTerm' : fullscreenAirHash,
+  'MacVim' : fullscreenAirHash,
+  'Google Chrome' : fullscreenExtHash,
+  'iTunes' : fullscreenExtHash
+});
+
+var nativeDisplay = slate.layout('nativeDisplay', {
+  'iTerm' : fullscreenAirHash,
+  'MacVim' : fullscreenAirHash,
+  'Google Chrome' : fullscreenAirHash,
+  'iTunes' : fullscreenAirHash
 });
 
 // Binds
@@ -78,3 +119,8 @@ slate.bind('k:ctrl,cmd', macVimFocus);
 slate.bind('j:ctrl,alt,cmd', slate.operation('layout', {
   'name' : iTermChromeLayout
 }));
+
+// Defaults
+
+slate.default(1, nativeDisplay)
+slate.default(2, dualDisplays)
