@@ -74,6 +74,7 @@ var iTermFocus = slate.operation('focus', { 'app' : 'iTerm' });
 var macVimFocus = slate.operation('focus', { 'app' : 'MacVim' });
 var chromeFocus = slate.operation('focus', { 'app' : 'Google Chrome' });
 var iTunesFocus = slate.operation('focus', { 'app' : 'iTunes' });
+var adiumFocus = slate.operation('focus', { 'app' : 'Adium' });
 
 // Hashes
 
@@ -146,6 +147,7 @@ slate.bind('i:ctrl,cmd', chromeFocus);
 slate.bind('j:ctrl,cmd', iTermFocus);
 slate.bind('k:ctrl,cmd', macVimFocus);
 slate.bind('o:ctrl,cmd', iTunesFocus);
+slate.bind('u:ctrl,cmd', adiumFocus);
 
 slate.bind('j:ctrl,alt,cmd', slate.operation('layout', {
   'name' : iTermChromeLayout
