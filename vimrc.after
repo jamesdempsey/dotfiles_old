@@ -47,3 +47,6 @@ au BufRead,BufNewFile *.scss set filetype=scss
 
 " Ag, the new hotness
 nnoremap <Leader>f :Ag!<Space>-i<Space>
+
+" a 'change till' that's easier on the fingers
+nnoremap df ct
