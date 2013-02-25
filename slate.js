@@ -32,6 +32,30 @@ var pushDown = slate.operation('push', {
   'style' : 'bar-resize:screenSizeY/2'
 });
 
+var topLeftCorner = slate.operation('corner', {
+  'direction' : 'top-left',
+  'width' : 'screenSizeX/2',
+  'height' : 'screenSizeY/2'
+});
+
+var topRightCorner = slate.operation('corner', {
+  'direction' : 'top-right',
+  'width' : 'screenSizeX/2',
+  'height' : 'screenSizeY/2'
+});
+
+var bottomLeftCorner = slate.operation('corner', {
+  'direction' : 'bottom-left',
+  'width' : 'screenSizeX/2',
+  'height' : 'screenSizeY/2'
+});
+
+var bottomRightCorner = slate.operation('corner', {
+  'direction' : 'bottom-right',
+  'width' : 'screenSizeX/2',
+  'height' : 'screenSizeY/2'
+});
+
 var fullscreen = slate.operation('move', {
   'x' : 'screenOriginX',
   'y' : 'screenOriginY',
@@ -108,6 +132,11 @@ slate.bind('right:ctrl,alt,cmd', function(win) {
 slate.bind('down:ctrl,alt,cmd', function(win) {
   win.doOperation(pushDown);
 });
+
+slate.bind('up:ctrl,alt', topLeftCorner);
+slate.bind('right:ctrl,alt', topRightCorner);
+slate.bind('left:ctrl,alt', bottomLeftCorner);
+slate.bind('down:ctrl,alt', bottomRightCorner);
 
 slate.bind('m:ctrl,cmd', function(win) {
   win.doOperation(fullscreen);
