@@ -70,6 +70,10 @@ var iTermChromeShow = slate.operation('show', {
   'app' : ['iTerm', 'Google Chrome']
 });
 
+var iTermMacVimShow = slate.operation('show', {
+  'app' : ['iTerm', 'MacVim']
+});
+
 var iTermFocus = slate.operation('focus', { 'app' : 'iTerm' });
 var macVimFocus = slate.operation('focus', { 'app' : 'MacVim' });
 var chromeFocus = slate.operation('focus', { 'app' : 'Google Chrome' });
@@ -99,6 +103,20 @@ var iTermChromeLayout = slate.layout('iTermChromeLayout', {
   'Google Chrome' : {
     'operations' : pushLeft,
     'main-first' : true
+  }
+});
+
+var iTermMacVimLayout = slate.layout('iTermMacVimLayout', {
+  '_after_' : { 'operations' : [iTermMacVimShow, iTermFocus] },
+  'iTerm' : {
+    'operations' : pushRight,
+    'repeat' : true,
+    'main-last' : true
+  },
+  'MacVim' : {
+    'operations' : pushLeft,
+    'repeat' : true,
+    'main-last' : true
   }
 });
 
@@ -151,6 +169,10 @@ slate.bind('u:ctrl,cmd', adiumFocus);
 
 slate.bind('j:ctrl,alt,cmd', slate.operation('layout', {
   'name' : iTermChromeLayout
+}));
+
+slate.bind('l:ctrl,cmd', slate.operation('layout', {
+  'name' : iTermMacVimLayout
 }));
 
 // Defaults
