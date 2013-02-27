@@ -162,8 +162,8 @@ slate.bind('m:ctrl,cmd', function(win) {
 });
 
 slate.bind('i:ctrl,cmd', chromeFocus);
-slate.bind('j:ctrl,cmd', iTermFocus);
-slate.bind('k:ctrl,cmd', macVimFocus);
+slate.bind('k:ctrl,cmd', iTermFocus);
+slate.bind('j:ctrl,cmd', macVimFocus);
 slate.bind('o:ctrl,cmd', iTunesFocus);
 slate.bind('u:ctrl,cmd', adiumFocus);
 
