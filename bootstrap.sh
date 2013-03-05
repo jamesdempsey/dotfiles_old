@@ -8,7 +8,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="gvimrc.after slate.js vimrc.before vimrc.after zshrc"
+files="slate.js vimrc vim zshrc"
 
 ####################
 
@@ -21,20 +21,20 @@ files="gvimrc.after slate.js vimrc.before vimrc.after zshrc"
 #
 # If you don't have Janus, then install it using the automatic installer:
 
-if [ ! -d ~/.vim/janus ]
-then
-  curl -Lo- https://bit.ly/janus-bootstrap | bash
-else
-  cd ~/.vim
-  rake
-fi
+#if [ ! -d ~/.vim/janus ]
+#then
+  #curl -Lo- https://bit.ly/janus-bootstrap | bash
+#else
+  #cd ~/.vim
+  #rake
+#fi
 
 # If you also don't have oh-my-zsh..
 
-if [ ! -d ~/.oh-my-zsh/ ]
-then
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-fi
+#if [ ! -d ~/.oh-my-zsh/ ]
+#then
+  #curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+#fi
 
 # Backup old dotfiles and create new symlinks
 
@@ -47,9 +47,9 @@ for file in $files; do
 done
 
 # oh-my-zsh custom shit
-mv ~/.oh-my-zsh/custom/example.zsh ~/dotfiles_old/example.zsh
-rm -f ~/.oh-my-zsh/custom/example.zsh
-ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
+#mv ~/.oh-my-zsh/custom/example.zsh ~/dotfiles_old/example.zsh
+#rm -f ~/.oh-my-zsh/custom/example.zsh
+#ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
 
 # font shit
 cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
