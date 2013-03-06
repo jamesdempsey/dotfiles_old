@@ -43,10 +43,16 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 theme_precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{green}]'
+    if [[ -n $(git stash list 2> /dev/null) ]] {
+      STASH=' %B%F{blue}☰'
     } else {
-        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{red}●%F{green}]'
+      STASH=''
+    }
+
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats " [%b%c%u%B%F{green}]${STASH}"
+    } else {
+        zstyle ':vcs_info:*' formats " [%b%c%u%B%F{red}●%F{green}]${STASH}"
     }
 
     vcs_info
@@ -54,6 +60,5 @@ theme_precmd () {
 
 setopt prompt_subst
 PROMPT='%B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
-
 autoload -U add-zsh-hook
 add-zsh-hook precmd  theme_precmd
