@@ -5,6 +5,10 @@
 #export PATH=$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/heroku/bin
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/heroku/bin
 
+# Tab completion goodness
+autoload -U compinit
+compinit -i
+
 # Disable autocorrect
 unsetopt correct_all
 
