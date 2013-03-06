@@ -60,7 +60,7 @@ nnoremap df ct
 set nocompatible
 set number
 set ruler
-syntax enable
+syntax on
 set encoding=utf-8
 
 set hlsearch
@@ -91,6 +91,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-rails'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-haml'
 
 filetype plugin indent on
 
