@@ -46,7 +46,6 @@ precmd () {
 
 # Kolo theme yanked from oh-my-zsh
 autoload -U colors && colors
-
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' stagedstr '%F{green}●'
@@ -54,20 +53,28 @@ zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
+
 theme_precmd () {
+  if [[ -n $(git rev-parse --git-dir 2> /dev/null) ]] {
+    if [[ -n $(git status | grep 'Your branch is ahead' 2> /dev/null) ]] {
+      PUSH=' %B%F{yellow}⬆'
+    } else {
+      PUSH=''
+    }
+
     if [[ -n $(git stash list 2> /dev/null) ]] {
-      STASH=' %B%F{blue}☰'
+      STASH=' %B%F{blue}⏏'
     } else {
       STASH=''
     }
 
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats " [%b%c%u%B%F{green}]${STASH}"
+      zstyle ':vcs_info:*' formats " [%b%c%u%B%F{green}]${STASH}${PUSH}"
     } else {
-        zstyle ':vcs_info:*' formats " [%b%c%u%B%F{red}●%F{green}]${STASH}"
+      zstyle ':vcs_info:*' formats " [%b%c%u%B%F{red}●%F{green}]${STASH}${PUSH}"
     }
-
-    vcs_info
+  }
+  vcs_info
 }
 
 setopt prompt_subst
