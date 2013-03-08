@@ -160,3 +160,5 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 let &shellpipe='&>'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+set updatetime=1
+au CursorHold,CursorHoldI * checktime
