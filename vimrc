@@ -26,6 +26,8 @@ nmap <Leader>q :q!<CR>
 nnoremap <space> 10jzz
 nnoremap <backspace> 10kzz
 
+vmap <Leader>m <Leader>c<space>
+
 " Turn off highlighting for current matches
 nmap <Leader>h :nohls<CR>
 
@@ -160,5 +162,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 let &shellpipe='&>'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
 set updatetime=1
 au CursorHold,CursorHoldI * checktime
