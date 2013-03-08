@@ -32,6 +32,18 @@ alias gsq='git commit --amend -C HEAD'
 alias gp='git push'
 alias gpl='git pull'
 
+# Set iTerm window and tab titles
+precmd () {
+  if [[ $PWD == $HOME ]] {
+    tab_title='~'
+  } else {
+    tab_title="$PWD:t"
+  }
+  window_title=${PWD/${HOME}/\~}
+  echo -ne "\e]2;${window_title}\a"
+  echo -ne "\e]1;${tab_title}\a"
+}
+
 # Kolo theme yanked from oh-my-zsh
 autoload -U colors && colors
 
