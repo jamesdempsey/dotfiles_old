@@ -4,6 +4,7 @@ let mapleader = ','
 "
 " Vundle block
 "
+
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
@@ -27,37 +28,47 @@ filetype plugin indent on
 "
 " The basics
 "
+
 set number
 set ruler
 syntax enable
 set encoding=utf-8
 set noswapfile
+set showmatch
+set history=1000
 set fo+=o
-set mouse=a
+set mouse-=a
+set mousehide
 colorscheme herald
 
 "
-" New shit to check out
+" Statusline
 "
-set history=1000
-set showmatch
-"set softtabstop=2
-set mousehide
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
+hi User1 ctermbg=0 ctermfg=84 cterm=none
+set statusline=%<
+set statusline+=\ %n:%f
+set statusline+=\ %m%r%y
+set statusline+=%=%l/%L
+set statusline+=\ %1*%c%*
+set statusline+=\ (%P)
 set laststatus=2
 
 "
 " Whitespace
 "
-"set nowrap
+
+set nowrap
 set tabstop=2
-set shiftwidth=2
 set expandtab
+set shiftwidth=2
+set softtabstop=2
 set list
 
 "
 " List chars
 "
+
 set listchars=""
 set listchars=tab:\ \
 set listchars+=trail:.
@@ -67,6 +78,7 @@ set listchars+=precedes:<
 "
 " Searching
 "
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -75,6 +87,7 @@ set smartcase
 "
 " Mappings
 "
+
 " Quick escape
 imap kj <ESC>
 
@@ -119,6 +132,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 "
 " Other settings
 "
+
 au CursorHold,CursorHoldI * checktime " Check if file's been modified after CursorHold
 set updatetime=1                      " Check when CursorHold > 1 millisecond
 
