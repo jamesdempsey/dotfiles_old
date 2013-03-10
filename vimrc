@@ -1,86 +1,9 @@
-" Map leader
+set nocompatible
 let mapleader = ','
 
-set guioptions=aAce
-
-" For vim running in iTerm
-colorscheme herald
-set noantialias
-set guifont=Dina:h16
-
-" Map escape
-imap kj <ESC>
-
-" Easier split navigation
-" Use Ctrl-[hjkl] to select active split
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-
-" Save and quit
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q!<CR>
-
-" Map space bar and backspace
-nnoremap <space> 10jzz
-nnoremap <backspace> 10kzz
-
-vmap <Leader>m <Leader>c<space>
-
-" Turn off highlighting for current matches
-nmap <Leader>h :nohls<CR>
-
-" Tab for last buffer
-nnoremap <Tab> :b#<CR>
-
-" Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
-
-" Get rid of those annoying .swp files
-set noswapfile
-
-" Janus does some weird Sass syntax highlighting by default?
-" Problem is ~/.vim/janus/vim/langs/scss/ftdetect/scss.vim runs
-" au BufRead,BufNewFile *.scss set filetype=scss.css
-" which sets css syntax highlighting for scss I think.
-" Not what we want, so this undoes it:
-au BufRead,BufNewFile *.scss set filetype=scss
-
-" Ag, the new hotness
-nnoremap <Leader>f :Ag!<Space>-i<Space>
-
-" a 'change till' that's easier on the fingers
-nnoremap df ct
-
-
-
-" NEW SHIT
-set nocompatible
-set number
-set ruler
-syntax on
-set encoding=utf-8
-
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-set fo+=o
-
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
-nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
-nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
-
+"
+" Vundle block
+"
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
@@ -97,18 +20,127 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
+Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 
+"
+" The basics
+"
+set number
+set ruler
+syntax enable
+set encoding=utf-8
+set noswapfile
+set fo+=o
 set mouse=a
+colorscheme herald
 
-map <leader>n :NERDTreeToggle<CR>
+"
+" New shit to check out
+"
+set history=1000
+set showmatch
+"set softtabstop=2
+set mousehide
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set laststatus=2
 
+"
+" Whitespace
+"
+"set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list
+
+"
+" List chars
+"
+set listchars=""
+set listchars=tab:\ \
+set listchars+=trail:.
+set listchars+=extends:>
+set listchars+=precedes:<
+
+"
+" Searching
+"
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"
+" Mappings
+"
+" Quick escape
+imap kj <ESC>
+
+" Save and quit
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q!<CR>
+
+" Easier split navigation
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+" Turn off highlighting for current matches
+nmap <Leader>h :nohls<CR>
+
+" Faraway files
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
+
+" Quick NERDCommentToggle
+vmap <Leader>m <Leader>c<space>
+map <Leader>m <Leader>c<space>
+
+" Tab for last buffer
+nnoremap <Tab> :b#<CR>
+
+" Jump around
+nnoremap <space> 10jzz
+nnoremap <backspace> 10kzz
+
+" Quick 'change till'
+nnoremap df ct
+
+" Ag, the new hotness
+nnoremap <Leader>f :Ag!<Space>-i<Space>
+
+" Quick NERDTreeToggle
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+"
+" Other settings
+"
+au CursorHold,CursorHoldI * checktime " Check if file's been modified after CursorHold
+set updatetime=1                      " Check when CursorHold > 1 millisecond
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Start Insert as vertical line
+let &t_EI = "\<Esc>]50;CursorShape=0\x7" " End Insert as block
+
+let &shellpipe='&>' " Don't pipe ag/ack/grep output to terminal (still flashes)
+
+" Sane ignore for CtrlP
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
+" Way too many NERDTree settings
 let NERDTreeHijackNetrw = 0
+let NERDTreeQuitOnOpen=1
 
 augroup AuNERDTreeCmd
 autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
   let explicitDirectory = isdirectory(a:directory)
@@ -154,15 +186,5 @@ function s:UpdateNERDTree(...)
     endif
   endif
 endfunction
-let NERDTreeQuitOnOpen=1
-
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-let &shellpipe='&>'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-
-set updatetime=1
-au CursorHold,CursorHoldI * checktime
