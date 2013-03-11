@@ -35,10 +35,15 @@ syntax enable
 set encoding=utf-8
 set noswapfile
 set showmatch
-set history=1000
+set history=256
+set clipboard+=unnamedplus
 set fo+=o
+set fo-=r
+set backspace=indent,eol,start
 set mouse-=a
 set mousehide
+set splitbelow
+set splitright
 colorscheme herald
 
 "
