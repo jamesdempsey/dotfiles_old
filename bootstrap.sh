@@ -20,8 +20,14 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
+# Install vundle bundles
+mkdir ~/.vim/autoload
+vim +BundleInstall +qall
+
 # Best font
 cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
 
 # iTerm2 color presets
 open $dir/kolo-herald.itermcolors
+
+chsh -s zsh
