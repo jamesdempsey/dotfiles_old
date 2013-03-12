@@ -32,4 +32,4 @@ cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
 open $dir/kolo-herald.itermcolors
 
 # Change shell to zsh
-chsh -s zsh
+chsh -s /bin/zsh
