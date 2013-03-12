@@ -1,8 +1,0 @@
-colorscheme herald
-set noantialias
-set guifont=Dina:h16
-set co=116
-set transparency=0
-
-" Ag, the new hotness
-nnoremap <D-F> :Ag!<Space>-i<Space>

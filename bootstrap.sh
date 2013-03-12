@@ -1,7 +1,6 @@
 #!/bin/bash
 ########################################
 # bootstrap.sh
-# This script makes shit
 ########################################
 
 #################### Variables
@@ -12,32 +11,7 @@ files="slate.js vimrc vim zshrc"
 
 ####################
 
-# If you don't have MacVim:
-#
-# brew install macvim
-#
-# And you should also probably install iTerm2, dunno if there's way to
-# brew install that shit..
-#
-# If you don't have Janus, then install it using the automatic installer:
-
-#if [ ! -d ~/.vim/janus ]
-#then
-  #curl -Lo- https://bit.ly/janus-bootstrap | bash
-#else
-  #cd ~/.vim
-  #rake
-#fi
-
-# If you also don't have oh-my-zsh..
-
-#if [ ! -d ~/.oh-my-zsh/ ]
-#then
-  #curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-#fi
-
 # Backup old dotfiles and create new symlinks
-
 mkdir -p $olddir
 cd $dir
 
@@ -46,13 +20,8 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
-# oh-my-zsh custom shit
-#mv ~/.oh-my-zsh/custom/example.zsh ~/dotfiles_old/example.zsh
-#rm -f ~/.oh-my-zsh/custom/example.zsh
-#ln -s $dir/example.zsh ~/.oh-my-zsh/custom/example.zsh
-
-# font shit
+# Best font
 cp -i $dir/DinaMedium.dfont ~/Library/Fonts/
 
-# iterm2 color preset shit
+# iTerm2 color presets
 open $dir/kolo-herald.itermcolors
