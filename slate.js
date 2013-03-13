@@ -98,11 +98,13 @@ var iTermChromeLayout = slate.layout('iTermChromeLayout', {
   '_after_' : { 'operations' : [iTermChromeShow, iTermFocus] },
   'iTerm' : {
     'operations' : pushRight,
-    'main-first' : true
+    'repeat' : true,
+    'main-last' : true
   },
   'Google Chrome' : {
     'operations' : pushLeft,
-    'main-first' : true
+    'repeat' : true,
+    'main-last' : true
   }
 });
 
@@ -168,11 +170,11 @@ slate.bind('o:ctrl,cmd', iTunesFocus);
 slate.bind('u:ctrl,cmd', adiumFocus);
 
 slate.bind('j:ctrl,alt,cmd', slate.operation('layout', {
-  'name' : iTermChromeLayout
+  'name' : iTermMacVimLayout
 }));
 
 slate.bind('l:ctrl,cmd', slate.operation('layout', {
-  'name' : iTermMacVimLayout
+  'name' : iTermChromeLayout
 }));
 
 // Defaults
