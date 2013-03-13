@@ -137,6 +137,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 "
 " Other settings
 "
+au BufRead,BufNewFile {*.md,*.mkd,*.markdown} setf markdown
 
 au CursorHold,CursorHoldI * checktime " Check if file's been modified after CursorHold
 set updatetime=1                      " Check when CursorHold > 1 millisecond
