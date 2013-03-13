@@ -36,7 +36,7 @@ set encoding=utf-8
 set noswapfile
 set showmatch
 set history=256
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 set fo+=o
 set fo-=r
 set backspace=indent,eol,start
