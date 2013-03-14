@@ -20,7 +20,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-haml'
+Bundle 'jamesdempsey/vim-haml'
 Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
