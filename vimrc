@@ -155,7 +155,7 @@ let g:ctrlp_custom_ignore = {
 
 " Way too many NERDTree settings
 let NERDTreeHijackNetrw = 0
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1
 
 augroup AuNERDTreeCmd
 autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
