@@ -35,6 +35,9 @@ alias gsq='git commit --amend -C HEAD'
 alias gp='git push'
 alias gpl='git pull'
 
+# rails alias(es)
+alias sand='rails c --sandbox'
+
 # Set iTerm window and tab titles
 precmd () {
   if [[ $PWD == $HOME ]] {
