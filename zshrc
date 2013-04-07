@@ -34,6 +34,7 @@ alias gdw='git diff --word-diff'
 alias gsq='git commit --amend -C HEAD'
 alias gp='git push'
 alias gpl='git pull'
+alias grm='git rebase master'
 
 # rails alias(es)
 alias sand='rails c --sandbox'
