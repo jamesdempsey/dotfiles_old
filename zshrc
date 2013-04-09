@@ -39,6 +39,9 @@ alias grm='git rebase master'
 # rails alias(es)
 alias sand='rails c --sandbox'
 
+# vim alias(es)
+alias vim='mvim -v'
+
 # Set iTerm window and tab titles
 precmd () {
   if [[ $PWD == $HOME ]] {
