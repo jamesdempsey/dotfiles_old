@@ -129,7 +129,7 @@ nnoremap <backspace> 10kzz
 nnoremap df ct
 
 " Ag, the new hotness
-nnoremap <Leader>f :Ag!<Space>-i<Space>
+nnoremap <Leader>f :Ag!<Space>
 
 " Quick NERDTreeToggle
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -137,6 +137,8 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 "
 " Other settings
 "
+let g:agprg='ag --column -i --ignore ./log'
+
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown} setf markdown
 
 au CursorHold,CursorHoldI * checktime " Check if file's been modified after CursorHold
