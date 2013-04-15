@@ -7,7 +7,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="slate.js vimrc vim zshrc"
+files="irbrc pryrc slate.js vimrc vim zshrc"
 
 ####################
 
