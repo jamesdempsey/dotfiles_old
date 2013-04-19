@@ -8,7 +8,7 @@ if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
   require rails
 
   rails_v = Rails.version[0..0]
-  if rails_version == "2"
+  if rails_v == "2"
     require 'console_app'
     require 'console_with_helpers'
   elsif rails_v == "3" || rails_v == "4"
