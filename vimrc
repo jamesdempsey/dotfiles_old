@@ -23,6 +23,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'jamesdempsey/vim-haml'
 Bundle 'ap/vim-css-color'
+Bundle 'koron/nyancat-vim'
 
 filetype plugin indent on
 
