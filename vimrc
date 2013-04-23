@@ -24,6 +24,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'jamesdempsey/vim-haml'
 Bundle 'ap/vim-css-color'
 Bundle 'koron/nyancat-vim'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
 
