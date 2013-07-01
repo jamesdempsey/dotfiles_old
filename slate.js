@@ -8,7 +8,7 @@ slate.configAll({
 // Displays
 
 var airDisplay = '1440x900';
-var extDisplay = '1680x1050';
+var extDisplay = '1920x1080';
 
 // Operations
 
@@ -123,10 +123,10 @@ var iTermMacVimLayout = slate.layout('iTermMacVimLayout', {
 });
 
 var dualDisplays = slate.layout('dualDisplays', {
-  'iTerm' : fullscreenAirHash,
+  'iTerm' : fullscreenExtHash,
   'MacVim' : fullscreenAirHash,
-  'Google Chrome' : fullscreenExtHash,
-  'iTunes' : fullscreenExtHash
+  'Google Chrome' : fullscreenAirHash,
+  'iTunes' : fullscreenAirHash
 });
 
 var nativeDisplay = slate.layout('nativeDisplay', {
