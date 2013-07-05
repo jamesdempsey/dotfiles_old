@@ -137,6 +137,25 @@ nnoremap <Leader>f :Ag!<Space>
 " Quick NERDTreeToggle
 nnoremap <leader>n :NERDTreeToggle<CR>
 
+" Open pane in new tab
+nnoremap <leader>t :tabedit %<cr>
+
+" Open pane in new tab; toggle to close
+"nnoremap <leader>t :call TabToggle()<CR>
+
+"let g:tab_is_open = 0
+
+"function! TabToggle()
+  "if g:tab_is_open
+    "tabclose
+    "let g:tab_is_open = 0
+  "else
+    "tabedit %
+    "let g:tab_is_open = 1
+  "endif
+"endfunction
+
+
 "
 " Other settings
 "
