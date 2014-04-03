@@ -13,5 +13,9 @@ end
 # load pry
 require 'rubygems'
 require 'pry'
+
+# IRB-style evaluation output
+#Pry.config.print = proc {| output, value| output.puts "=> #{value.inspect}" }
+
 Pry.start
 exit

@@ -3,7 +3,8 @@
 #
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 #export PATH=$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/heroku/bin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/heroku/bin
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/heroku/bin"
+export NODE_PATH="/usr/local/lib/node"
 
 # Tab completion goodness
 autoload -U compinit
@@ -14,6 +15,7 @@ unsetopt correct_all
 
 # shell alias(es)
 alias la='ls -la'
+alias aid='cd ~/Aidin'
 
 # git aliases
 alias g='git'
@@ -36,8 +38,11 @@ alias gp='git push'
 alias gpl='git pull'
 alias grm='git rebase master'
 
+# crazy git log
+alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # rails alias(es)
-alias sand='rails c --sandbox'
+alias sand='spring rails c --sandbox'
 
 # vim alias(es)
 alias vim='mvim -v'

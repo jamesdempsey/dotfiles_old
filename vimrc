@@ -159,7 +159,7 @@ nnoremap <leader>t :tabedit %<cr>
 "
 " Other settings
 "
-let g:agprg='ag --column -i --ignore ./log'
+let g:agprg='ag --column -i'
 
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown} setf markdown
 
@@ -176,6 +176,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
+
+" No max limit
+let g:ctrlp_max_files = 0
 
 " Way too many NERDTree settings
 let NERDTreeHijackNetrw = 0
@@ -232,3 +235,15 @@ function s:UpdateNERDTree(...)
 endfunction
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Trying out some gvim shit
+if has('gui_running')
+  set go-=T
+  set go-=r
+  set go-=R
+  set go-=L
+  "set guifont=ProggyClean:h11
+  set guifont=Inconsolata-g
+  "set guifont=Dina
+  set transparency=15
+endif
